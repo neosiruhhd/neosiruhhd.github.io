@@ -22,17 +22,19 @@
         width="100%"
         height="auto"
     >
-<!-- Paragraphs are indented further than heading elements because it's really difficult to discern what sentences belong to which elements if there's no indentation. Just makes it look like pure blocks of text. -->
- <!-- Used divs to ID each question into unique sections to declutter the code and to easily add different images to each question. -->
- <div id="Q1">
-    <img src="images/luni_homescreen.png"
-            width="40%"
-            style="float: right;">
+ <!-- Used sections and IDs to semantically identify each question into unique sections to declutter the code and to apply flexboxes to each question. -->
+ <section class="content-block" id="Q1">
+    <div class="text">
     <h2>What was the first thing you paid attention to when interacting with the experience?</h2>
         <p>What stood out to me most prominently upon first impressions was that the entire website experience remained playful throughout. The website utilised bright, contrast-heavy, fun colourways which work in tandem with the interactive 3D homepage. 
         <br><br> 
         Luni clearly spent a lot of time addressing their motion identity as not only are the 3D elements interactive and carry movement, but so to do the typography, images, and icons seen elsewhere  on other pages. These are of course complimented by a bold modern sans-serif typeface.</p>
-</div>
+    </div>
+    <div class="images">
+        <img src="images/luni_homescreen.png"
+            alt="Landing page of Luni.app">
+    </div>
+</section>
 <div id="Q2">
     <h2>Spend two minutes with the experience and create a list of each of your discrete actions.</h2>
         <p>Across the two minutes I found myself hovering over each homepage item to see what 3D animation would activate upon hover and touch. I also primarily used the hamburger menu to move from one section of the website to the other when accessing different webpages. I would pause and inspect hero images that filled the width of the page as I felt like they deserved my attention. 
