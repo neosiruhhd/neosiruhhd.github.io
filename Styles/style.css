@@ -1,10 +1,27 @@
+body {
+  background-color: #FCFFF2;
+}
+
+body {
+  color: #071610;
+}
+
 p {
-  width: 40%;
+  width: 75ch;
   font-family: 'Literata', serif;
+  margin-left: 1rem;
+  
 }
 
 h2 {
   width: 40%;
   font-family: 'Outfit', sans-serif;
+  margin-left: 1rem;
+}
+
+img {
+  margin-right: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
