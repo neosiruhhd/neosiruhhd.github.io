@@ -8,6 +8,12 @@ body {
   color: #071610;
 }
 
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 /* This is calling on each of the elements under the class .content-block and converting them into CSS flex boxes. This is what creates the 2 column layout on the website. */
 .content-block {
   display: flex;
