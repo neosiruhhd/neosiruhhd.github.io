@@ -8,10 +8,10 @@ body {
   color: #071610;
 }
 
+/* This sets a standardised max width for all the elements on the page. This is to counter the different user viewports resolutions rendering the scales of the column elements abnormally.*/
 .page {
   max-width: 1700px;
   margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
 /* This is calling on each of the elements under the class .content-block and converting them into CSS flex boxes. This is what creates the 2 column layout on the website. */
