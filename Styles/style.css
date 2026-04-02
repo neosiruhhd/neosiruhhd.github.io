@@ -22,7 +22,8 @@ body {
   display: block;
   width: 420px;
   height: auto;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
+  float: none;
 }
 
 /* img {
