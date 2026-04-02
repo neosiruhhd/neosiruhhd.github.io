@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <!-- All the code I want *not* visualised on the website. This includes my website title that shows in the browser's tab and the link to my CSS file. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luni.app Review</title>
     <link href="Styles/style.css" rel="stylesheet" />
-<!-- Linking my website to Google Fonts API to import fonts from their servers. -->
+<!-- Linking my website to Google Fonts API to import the two main fonts 'Literata' and 'Outfit' from their servers. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap" rel="stylesheet">
@@ -14,8 +15,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
+
+
 <body>
-<!-- I'll try to indent all the element attributes to visually clear the code up. -->
  <section class="Header">
     <img 
         src="images/index_landing_page.png" 
@@ -27,12 +30,17 @@
  <!-- Used sections and IDs to semantically identify each question into unique sections to declutter the code and to apply flexboxes to each question. -->
 
  <section class="content-block" id="Q1">
+    <!-- Each question is it's own semantic section element classified as a content block with an assigned ID in order to separate the website into a sort of grid that allows for images to not overflow past their paired text. -->
     <div class="text">
     <h2>What was the first thing you paid attention to when interacting with the experience?</h2>
         <p>What stood out to me most prominently upon first impressions was that the entire website experience remained playful throughout. The website utilised bright, contrast-heavy, fun colourways which work in tandem with the interactive 3D homepage. 
         <br><br> 
         Luni clearly spent a lot of time addressing their motion identity as not only are the 3D elements interactive and carry movement, but so to do the typography, images, and icons seen elsewhere  on other pages. These are of course complimented by a bold modern sans-serif typeface.</p>
     </div>
+    <!-- I use a separate class for text and images for further specification. 
+     All images in my website backend directory follow the same naming convention of the question it correlates to, followed by whether it is the first or second photo relating to the question. 
+     
+     Due to the code in my CSS style sheet, it uses a flex column to place the images on the right side of the screen, creating a two column-like website layout instead of having the images placed below the paragraphs. -->
     <div class="images">
         <img src="images/1_1.png"
             alt="Landing page of Luni.app"
@@ -40,6 +48,8 @@
         >
     </div>
 </section>
+
+<!-- After each question ends, a new section element is opened with a new ID, templating the same code from the previous. -->
 
 <section class="content-block" id="Q2">
     <div class="text">
@@ -49,6 +59,7 @@
         Finally, I went through all the listed employee benefits out of curiosity as I couldn't see them from a glance due to it being a required interaction to open the corresponding drop-down menus.</p>
     </div>
     <div class="images">
+        <!-- Sometimes questions will include more than one related image, in which the screenshots will stack against one another inside the question's content block and will create the necessary gap on the left text column to not overflow into the next question's header and paragraph. -->
         <img src="images/2_1.png"
             alt="The menu to navigate to different pages on the website."
         >
@@ -192,6 +203,9 @@
         <p>The most satisfying part is the continuous smooth motion identity that remains present throughout every interaction, communicating the level of detail Luni goes to when building a brand image and mood for the viewer.</p>
     </div>
 </section>
-
+<!-- Finally, I end the code by closing the opened body and html elements. -->
 </body>
+
+
+
 </html>

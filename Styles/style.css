@@ -1,11 +1,14 @@
+/* This sets the website's background colour to an offwhite. */
 body {
   background-color: #FCFFF2;
 }
 
+/* This sets all the text on the website to a very dark green.  */
 body {
   color: #071610;
 }
 
+/* This is calling on each of the elements under the class .content-block and converting them into CSS flex boxes. This is what creates the 2 column layout on the website. */
 .content-block {
   display: flex;
   align-items: flex-start;
@@ -14,6 +17,7 @@ body {
   margin-top: 4rem;
 }
 
+/* This is calling on each of the image elements within the flexboxes, and placing them on a separate column adjacent to the website text. */
 .content-block .images {
   display: flex;
   flex-direction: column;
@@ -22,6 +26,7 @@ body {
   margin-right: 7rem
 }
 
+/* This is calling on the same elements, except directly resizing the properties of each of the images to a consistent 650 pixel width. This is necessary as the screenshots taken of Luni.app are not the same sizes, and without this style specification the images do not vertically align. */
 .content-block .images img {
   display: block;
   width: 650px;
@@ -30,18 +35,14 @@ body {
   float: none;
 }
 
-/* img {
-  margin-right: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-} */
-
+/* This is calling on all of the text elements within the flexboxes, both headings and paragraphgs. This styling includes a small 1.5rem margin to unstick the text from the very left side of the screen. */
 .content-block .text {
   flex: 1;
   margin-right: 1.5rem;
   text-align: left;
 }
 
+/* This styling change targets all the paragraph elements across the website and ensures a maximum of 75 characters are shown on each line. This is to prevent paragraphs from spanning the width of the screen. It also assigns the Literata font to all the paragraph text, but uses the system's default serif font as a backup.*/
 p {
   width: 75ch;
   font-family: 'Literata', serif;
@@ -49,6 +50,9 @@ p {
   
 }
 
+/* This styling change targets all heading elements across the website and ensures the text does not take up more than 40% of the user's viewport. The width quantity varies from the paragraph styling due to the larger scaling but smaller amount of text in each of the headings. It also assigns the Outfit font to each of the headings, but uses the system's default sans-serif font as a backup. */
+
+/* The last two comments are simply code that was made redundant during the refactoring change from floats to flexboxes. */
 h2 {
   width: 40%;
   font-family: 'Outfit', sans-serif;
@@ -56,3 +60,8 @@ h2 {
   /* clear: right; */
 }
 
+/* img {
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+} */
