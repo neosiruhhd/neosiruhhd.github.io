@@ -13,21 +13,23 @@ body {
 }
 
 .content-block .images {
-  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .content-block .images img {
   display: block;
-  width: 100%;
+  width: 420px;
   height: auto;
   margin-bottom: 0.5rem;
 }
 
-img {
+/* img {
   margin-right: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
+} */
 
 .context-block .text {
   flex: 1;
@@ -45,6 +47,6 @@ h2 {
   width: 40%;
   font-family: 'Outfit', sans-serif;
   margin-left: 2rem;
-  clear: right;
+  /* clear: right; */
 }
 
