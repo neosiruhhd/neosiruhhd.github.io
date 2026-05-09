@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://rohitashokkhot.github.io/vplayer/ -->
+<html lang="en">
+  <!-- there was a nasty bit of code here that was causing all my comments to be rendered under js syntax, now exterminated -->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Media player_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./Media player_files/reset.css">
+    <link rel="stylesheet" href="./Media player_files/style.css">
+    <script src="./Media player_files/script.js" defer=""></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="use-credentials">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link rel="stylesheet" href="./Media player_files/css2(1)">
+  </head>
+  <body>
+    <header>
+      <!-- changing the header to something more therapeudic -->
+      <h1>Slow down, relax.</h1>
+    </header>
+    <!-- changing the whole html main structure to operate on an audio-player based ui -->
+    <main class="player-container">
+      <!-- changing this from a video element to an audio and linking my own music files -->
+      <audio id="currently-playing" src="heart-to-heart.mp3"></audio>
+      <section class="playback-controls">
+        <!-- playback-controls class groups the playback controls -->
+        <!-- using a button element here instead of a styled div as its more semantic for myself and for AT (assistive technology) -->
+        <!-- the nav-button class is attributed to both the 'rewind' and 'next' buttons functions as their purposes are the same, just opposites; as well instead of linking to icons for these im opting just to use a character that resembles the same thing, better for performance -->
+        <button id="prev-button" class="nav-button">
+          ◀
+        </button>
+        
+        <button id="play-pause-button" class="play-button">
+          <img src="play--v2.png" alt="play icon" id="play-pause-img">
+        </button>
+        
+        <button id="next-button" class="nav-button">
+          ▶
+        </button>
+
+      </section>
+
+      <section class="playback-info">
+      <!-- playback-info class groups the song information and progress bar of the song -->
+      <!-- this heading hierarchy intentionally makes the track title larger than the artist name -->
+      <h2 class="artist-name">
+        Mac DeMarco
+      </h2>
+      
+      <h1 class="track-title">
+        Heart to Heart
+      </h1>
+      
+      <!-- this div represents both the line for the full length of the song and the line for the elapsed time of the song. This is instantiated in HTML, styled in CSS, and then refreshed by my JS. pretty cool -->
+      <div id="progress-bar-container">
+        <span id="progress-bar"></span>
+      </div>
+      
+      <!-- this div represents the two duration timers accompanying the div above, one span targetable for the current time and the other for the total duration of the track -->
+      <div class="time-container">
+        <span id="current-time">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+
+      <!-- this div is for the motivational quotes or messages that are periodically shown to the user, in line with the whole 'rest and relaxation' aesthetic -->
+      <div class="quote-box">
+        <p id="quote-text">
+          It'll get done. Don't worry.
+        </p>
+      </div>
+
+      <!-- this div is for all the 'comfort controls' i intend to implement (currently only one which allows users to slide their audio mix between the music and an environment ambience, heavy inspiration from when i personally used Headspace app) -->
+      <div class="comfort-controls">
+        <input
+          type="range"
+          id="calm-slider"
+          min="0"
+          max="100"
+          value="30"
+        >
+      </div>
+        </section>
+    </main>
+  </body>
+</html>
