@@ -1,20 +1,83 @@
+/* adding more dividing lines to categorise styling attributes */
+
+/* universal styling to all html on page */
 body {
+  /* vh is targeting the viewport height, ensuring the contents of the page is AT LEAST using the full height of the screen */
+  min-height: 100vh;
+
+  /* colour styling for bg and elements, will probably change later */
+  background: black;
+  color: white;
+
+  /* flexbox attributes, make sure everything is centered on the page, lets keep it simple */
   display: flex;
-  margin: 0 auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+
+  /* equates to around 16px of space around all the elements from the viewport sides */
+  padding: 4rem;
+
+  /* need to change this */
   font-family: "REM", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  color: rgb(202, 151, 122);
+
+  /* hides any element overflowing that isnt already visible to the user */
+  overflow: hidden;
 }
 
-a {
-  color: rgb(202, 151, 122);
+/* styling to the spacing of the audioplayer container */
+.player-container {
+  /* take up to 1800px for width, if vp is less than simply fill */
+  width: 100%;
+  max-width: 1800px;
+
+/* flexbox attributes for the player container elements specifically, that is then being centered by the previously styled flexbox in the body */
+  display: flex;
+  /* aligning-items (that are already in the center of the page) to the center of their container, confusing but makes sense */
+  align-items: center;
+  /* gap between the playback info and controls */
+  gap: 6rem;
 }
+
+/* styling to the playback control elements */
+.playback-controls {
+  /* ensures that styling done to the spacing of playback control elements (skip, play/pause, rewind buttons) are applied from within (relative to) the player-controls container, not the page or the parental player-container */
+  position: relative;
+
+  /* this is overkill with the height but its just to give ample space to the buttons, they're centered anyways so its chill */
+  width: 700px;
+  height: 700px;
+
+  /* border enclosing the elements + rounding, gotta change this later -- dont like how it looks */
+  border: 2px solid white;
+  border-radius: 2rem;
+
+  /* centering elements within the overkill width and height styled above */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* specifically styling to the playbutton, which is a child class of the playback-controls class */
+.play-button {
+  width: 560px;
+  height: 560px;
+
+  /* how tf does 50% make it fully circular */
+  border: none;
+  border-radius: 50%;
+
+  background: white;
+
+  /* centering the play/pause images within the play-button container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+
+ALL OF ROHIT'S CODE BELOW
 
 .double-border {
   border: 6px double rgb(65, 41, 27);
@@ -23,7 +86,6 @@ a {
 
 video {
   width: 800px;
-  /* width: 100%; */
   height: auto;
   border-radius: 12px;
 }
@@ -35,14 +97,11 @@ h1 {
 .main-screen,
 .controls {
   display: flex;
-  /* gap: 10px; */
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 10px; */
 }
 
 .main-screen {
-  /* background-color: antiquewhite; */
   padding: 10px;
   width: 100%;
 }
@@ -80,7 +139,6 @@ button {
   padding: 10px;
   font-size: 1.2rem;
   color: black;
-  /* color: rgb(202, 151, 122); */
   border-radius: 12px;
   background-color: rgba(250, 235, 215, 0.588);
 }
@@ -93,8 +151,4 @@ button:hover {
 #likes {
   font-size: 2.2rem;
   color: rgb(168, 55, 55);
-}
-
-footer {
-  /* bottom: 0; */
-}
+} */
