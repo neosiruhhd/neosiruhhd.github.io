@@ -73,7 +73,51 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* making it so when a user hover overs the button it turns into a pointer, indicating it is an interactable element */
+  cursor: pointer;
+
+  /* gradually reacts to the hover state change below */
+  transition: transform 0.25s ease;
 }
+
+/* change this later to preference, simply shrinks the button down slightly to indicate an active touch target */
+.play-button:hover {
+  transform: scale(0.97);
+}
+
+/* styling the sizing the image of the play button within the circle */
+.play-button img {
+  width: 180px;
+  height: 180px;
+}
+
+/* styling both the forward and back buttons of the playback controls */
+.nav-button {
+  /* allows me to position the nav buttons without the other elements in the containers being affected by their spacing */
+  position: absolute;
+  bottom: 2rem;
+
+  border: none;
+  background: transparent;
+  color: white;
+  opacity: 0.8;
+  font-size: 4rem;
+
+  cursor:pointer;
+
+  transition: 
+    transform 0.25 ease,
+    opacity 0.25 ease;
+}
+
+/* on hover buttons slightly scale down and rise in opacity from 80% to 100%, may change later */
+.nav-button:hover {
+  transform: scale(0.9);
+  opacity: 1;
+}
+
+
 
 /*
 
