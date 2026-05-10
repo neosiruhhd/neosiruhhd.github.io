@@ -18,8 +18,8 @@ body {
   /* equates to around 16px of space around all the elements from the viewport sides */
   padding: 4rem;
 
-  /* need to change this */
-  font-family: "REM", sans-serif;
+  /* sets the global font */
+  font-family: "Momo Trust Display", sans-serif;
 
   /* hides any element overflowing that isnt already visible to the user */
   overflow: hidden;
@@ -45,12 +45,15 @@ body {
   position: relative;
 
   /* this is overkill with the height but its just to give ample space to the buttons, they're centered anyways so its chill */
-  width: 300px;
-  height: 300px;
+  width: 420px;
+  height: 420px;
 
-  /* border enclosing the elements + rounding, gotta change this later -- dont like how it looks */
+  /* border enclosing the elements + rounding, had to separate border radiuses into their own sides to get custom curving to make unique shape */
   border: 2px solid white;
-  border-radius: 2rem;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
 
   /* centering elements within the overkill width and height styled above */
   display: flex;
@@ -60,8 +63,8 @@ body {
 
 /* specifically styling to the playbutton, which is a child class of the playback-controls class */
 .play-button {
-  width: 200px;
-  height: 200px;
+  width: 421px;
+  height: 421px;
 
   /* how tf does 50% make it fully circular */
   border: none;
@@ -95,13 +98,14 @@ body {
 .nav-button {
   /* allows me to position the nav buttons without the other elements in the containers being affected by their spacing */
   position: absolute;
-  bottom: 2rem;
+  bottom: 0.25rem;
 
   border: none;
   background: transparent;
   color: white;
   opacity: 0.8;
-  font-size: 4rem;
+  font-size: 2rem;
+  letter-spacing: -0.5rem;
 
   cursor:pointer;
 
@@ -118,11 +122,13 @@ body {
 
 /* realigning the forward and back buttons 2 rems away from either side of the container */
 #prev-button {
-  left: 2rem;
+  left: 0.75rem;
 }
 
+/* for some fuck ass reason the spacing is asymmetrical with the forward and back buttons, no idea whats causing it ill have to change it up later */
+
 #next-button {
-  right: 2rem;
+  right: 0.75rem;
 }
 
 .playback-info {
@@ -134,11 +140,22 @@ body {
   font-size: 5rem;
   font-weight: 300;
   margin-bottom: 1rem;
+
+  color: black;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+
+    /* originally i was gonna use this method of generating a text outline, but opted for the method above since its compatible with more browsers*/
+    /* color: transparent;
+    -webkit-text-stroke: 2px white; */
 }
 
 .track-title {
   font-size: 7rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 0.85;
   margin-bottom: 2rem
 }
@@ -166,7 +183,47 @@ body {
   transition: width 0.1s linear;
 }
 
-.time-container
+/* targetting the current time and total duration elements */
+.time-container {
+  /* css flexbox game coming in clutch here */
+  display: flex;
+  justify-content: space-between;
+  
+  font-size: 1.25em;
+  font-weight: 700;
+  
+  margin-bottom: 4rem;
+}
+
+/* just targeting the duration timer to appear darker than the current time element */
+#duration {
+  opacity: 50%
+}
+
+.quote-box {
+  max-width: 100%;
+  /* will change the opacity later */
+  opacity: 80%
+}
+
+#quote-text {
+  font-size: 20px;
+  font-family: Kalam;
+  font-weight: 300;
+  line-height: 2;
+}
+
+.comfort-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#calm-slider {
+  width: 70%;
+  cursor: pointer;
+  accent-color: white;
+}
 
 /*
 

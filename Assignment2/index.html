@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<!-- saved from url=(0041)https://rohitashokkhot.github.io/vplayer/ -->
 <html lang="en">
   <!-- there was a nasty bit of code here that was causing all my comments to be rendered under js syntax, now exterminated -->
+  
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- changing the header to something more therapeudic -->
-    <title>Slow down, relax.</title>
+
+    <!-- Links to Google Font API -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="css2" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="use-credentials">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
     
+    <!-- links to Momo Trust Display font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+
+    <!-- links to Kalam font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- links to my Reset & Style CSS, as well as my JS file. -->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer=""></script>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="use-credentials">
-    <link rel="preconnect" href="https://fonts.gstatic.com/">
-    <link rel="stylesheet" href="css2(1)">
+    <!-- no clue what the purpose of these linked stylesheets are -->
+    <!-- <link rel="stylesheet" href="css2(1)"> -->
+    <!-- <link href="css2" rel="stylesheet"> -->
+
+    <!-- changing the header to something more therapeudic -->
+    <title>Slow down, relax.</title>
+
   </head>
+
   <body>
     <!-- changing the whole html main structure to operate on an audio-player based ui -->
     <main class="player-container">
@@ -29,7 +46,7 @@
         <!-- using a button element here instead of a styled div as its more semantic for myself and for AT (assistive technology) -->
         <!-- the nav-button class is attributed to both the 'rewind' and 'next' buttons functions as their purposes are the same, just opposites; as well instead of linking to icons for these im opting just to use a character that resembles the same thing, better for performance -->
         <button id="prev-button" class="nav-button">
-          ◀
+          ◀◀
         </button>
         
         <button id="play-pause-button" class="play-button">
@@ -37,7 +54,7 @@
         </button>
         
         <button id="next-button" class="nav-button">
-          ▶
+          ▶▶
         </button>
 
       </section>
