@@ -174,7 +174,7 @@ function rotateQuote() {
 }
 
 // then sets the interval of this function to run every 45 seconds
-setInterval(rotateQuote, 450000);
+setInterval(rotateQuote, 45000);
 
 // NAVIGATION BUTTONS -- orignally planned for these to go to the previous and next track but instead im going to make it go forwards and back 10 seconds
 
