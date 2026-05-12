@@ -48,8 +48,8 @@ function togglePlayback() {
     // set the button into 'play' state, as in, ready to be played
     currentlyPlaying.play();
     // display the play icon
-    playPauseImg.src = TO BE ADDED;
-    playPauseImg.alt = "Play Icon";
+    playPauseImg.src = "images/Play.png";
+    playPauseImg.alt = "images/Play Icon";
   
     // if the audio is still playing
   } else {
@@ -57,7 +57,7 @@ function togglePlayback() {
     // keep the button in the 'pause' state, as in, ready to be paused
     currentlyPlaying.pause();
     // display the pause icon
-    playPauseImg.src = TO BE ADDED;
+    playPauseImg.src = "images/Pause.png";
     playPauseImg.alt = "Pause Icon";
   }
 
@@ -68,8 +68,8 @@ function togglePlayback() {
 currentlyPlaying.addEventListener(
   "ended",
   function () {
-    playPauseImg.src TO BE ADDED;
-    playPauseImg.alt "Play Icon";
+    playPauseImg.src = "images/Play.png";
+    playPauseImg.alt = "Play Icon";
   }
 );
 
@@ -165,13 +165,32 @@ const quotes = [
 function rotateQuote() {
 
   const randomQuote =
-// 
+    // Math.random takes a random number between 0 and 1
+    // quotes.lentgh then multiplies by the amount of quotes stored in the array (currently 5)
+    // finally its turned into an integer with Math.floor
     quotes[Math.floor(Math.random() * quotes.length)];
-
+  // tells the quoteText element to run then display the randomeQuote const
   quoteText.textContent = randomQuote;
 }
 
+// then sets the interval of this function to run every 45 seconds
 setInterval(rotateQuote, 450000);
+
+// NAVIGATION BUTTONS -- orignally planned for these to go to the previous and next track but instead im going to make it go forwards and back 10 seconds
+
+previousButton.addEventListener(
+  "click",
+  function () {
+    currentlyPlaying.currentTime -= 10;
+  }
+);
+
+nextButton.addEventListener(
+  "click",
+  function () {
+    currentlyPlaying.currentTime -= 10;
+  }
+);
 
 
 
