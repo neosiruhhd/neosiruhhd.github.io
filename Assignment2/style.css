@@ -110,8 +110,8 @@ body {
   cursor:pointer;
 
   transition: 
-    transform 1 ease-out,
-    opacity 0.5 ease;
+    transform 1s ease-out,
+    opacity 0.5s ease;
 }
 
 /* on hover buttons slightly scale down and rise in opacity from 80% to 100%, may change later */
@@ -121,7 +121,7 @@ body {
 }
 
 /* realigning the forward and back buttons 2 rems away from either side of the container */
-#prev-button {
+#previous-button {
   left: 0.75rem;
 }
 
@@ -167,7 +167,8 @@ body {
 
   background: rgb(40,40,40);
 
-  /* overflow: hidden; */
+  /* to prevent progress bar from overflowing between transitions */
+  overflow: hidden;
 
   margin-bottom: 1.5rem;
 }
@@ -197,18 +198,19 @@ body {
 
 /* just targeting the duration timer to appear darker than the current time element */
 #duration {
-  opacity: 50%
+  opacity: 0.5
 }
 
 .quote-box {
   max-width: 100%;
   /* will change the opacity later */
-  opacity: 80%
+  opacity: 0.8
 }
 
 #quote-text {
   font-size: 20px;
-  font-family: Kalam;
+  /* ensures the quote defaults to a system serif font in case they cant load Kalam from google fonts */
+  font-family: "Kalam", serif;
   font-weight: 300;
   line-height: 2;
 }

@@ -1,145 +1,177 @@
-const videoList = [
-  { id: 1, src: "stardust.mp4" },
-  { id: 2, src: "zenscape.mp4" },
-  {
-    id: 3,
-    src: "https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4",
-  },
-];
+// ELEMENT REFERENCES -- instantiating a bunch of reference points for js to draw from the DOM (various html elements within the system hierarchy)
 
-// ID'ing each video with a unique number, referencing videos 1 and 2 from the website's directory but sourcing the 3rd video from an online URL. 
+const currentlyPlaying =
+  document.querySelector("currently-playing");
 
-const myVideo = document.querySelector("#my-video");
-console.log(myVideo);
+const progressBar =
+  document.querySelector("#progress-bar")
 
-const progressBar = document.querySelector("#progress-bar");
-console.log(progressBar);
+const progressBarContainer =
+  document.querySelector("progress-bar-container")
 
-myVideo.addEventListener("timeupdate", updateProgress);
+const playPauseButton =
+  document.querySelector("#play-pause-button")
 
-function updateProgress() {
-  const duration = (myVideo.currentTime / myVideo.duration) * 100;
-  progressBar.style.width = duration + "%";
-}
+const playPauseImg =
+  document.querySelector("#play-pause-img")
 
-const playPauseButton = document.querySelector("#play-pause-button");
-console.log(playPauseButton);
+const currentTime =
+  document.querySelector("#current-time")
 
-playPauseButton.addEventListener("click", togglePlayback);
+const duration =
+  document.querySelector("#duration")
 
-const playPauseImg = document.querySelector("#play-pause-img");
-console.log(playPauseImg);
+const quoteText =
+  document.querySelctor("#quote-text")
 
-function togglePlayback() {
-  if (myVideo.paused || myVideo.ended) {
-    myVideo.play();
-    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v2.png";
-  } else {
-    myVideo.pause();
-    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v2.png";
-  }
-}
+const previousButton =
+  document.querySelector("#previous-button")
 
-const muteUnmuteButton = document.querySelector("#mute-unmute-button");
-console.log(muteUnmuteButton);
+const nextButton =
+  document.querySelector("#next-button")
 
-muteUnmuteButton.addEventListener("click", toggleAudio);
+// const videoList = [
+//   { id: 1, src: "stardust.mp4" },
+//   { id: 2, src: "zenscape.mp4" },
+//   {
+//     id: 3,
+//     src: "https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4",
+//   },
+// ];
 
-const muteUnmuteImg = document.querySelector("#mute-unmute-img");
-console.log(muteUnmuteImg);
+// // ID'ing each video with a unique number, referencing videos 1 and 2 from the website's directory but sourcing the 3rd video from an online URL. 
 
-function toggleAudio() {
-  if (myVideo.muted) {
-    myVideo.muted = false;
-    muteUnmuteImg.src =
-      "https://img.icons8.com/ios-glyphs/30/high-volume--v2.png";
-  } else {
-    myVideo.muted = true;
-    muteUnmuteImg.src = "https://img.icons8.com/ios-glyphs/30/no-audio--v1.png";
-  }
-}
+// const myVideo = document.querySelector("#my-video");
+// console.log(myVideo);
 
-const stardustButton = document.querySelector("#stardust-vid-button");
-console.log(stardustButton);
+// const progressBar = document.querySelector("#progress-bar");
+// console.log(progressBar);
 
-stardustButton.addEventListener("click", function chooseVideo() {
-  playVideo(0);
-});
+// myVideo.addEventListener("timeupdate", updateProgress);
 
-const zenscapeButton = document.querySelector("#zenscape-vid-button");
-console.log(zenscapeButton);
+// function updateProgress() {
+//   const duration = (myVideo.currentTime / myVideo.duration) * 100;
+//   progressBar.style.width = duration + "%";
+// }
 
-zenscapeButton.addEventListener("click", function chooseVideo() {
-  playVideo(1);
-});
+// const playPauseButton = document.querySelector("#play-pause-button");
+// console.log(playPauseButton);
 
-const musicVideoButton = document.querySelector("#musicvideo-vid-button");
-console.log(musicVideoButton);
+// playPauseButton.addEventListener("click", togglePlayback);
 
-musicVideoButton.addEventListener("click", function chooseVideo() {
-  playVideo(2);
-});
+// const playPauseImg = document.querySelector("#play-pause-img");
+// console.log(playPauseImg);
 
-function playVideo(no) {
-  myVideo.src = videoList[no].src;
-  console.log(myVideo.src);
-  myVideo.load();
-  myVideo.play();
-}
+// function togglePlayback() {
+//   if (myVideo.paused || myVideo.ended) {
+//     myVideo.play();
+//     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v2.png";
+//   } else {
+//     myVideo.pause();
+//     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v2.png";
+//   }
+// }
 
-const fullscreenButton = document.querySelector("#fullscreen-button");
-console.log(fullscreenButton);
+// const muteUnmuteButton = document.querySelector("#mute-unmute-button");
+// console.log(muteUnmuteButton);
 
-fullscreenButton.addEventListener("click", toggleFullscreen);
+// muteUnmuteButton.addEventListener("click", toggleAudio);
 
-function toggleFullscreen() {
-  if (!document.fullscreenElement) {
-    myVideo.requestFullscreen();
-  } else {
-    document.exitFullscreen();
-  }
-}
+// const muteUnmuteImg = document.querySelector("#mute-unmute-img");
+// console.log(muteUnmuteImg);
 
-const heartButton = document.querySelector("#heart-button");
-console.log(heartButton);
+// function toggleAudio() {
+//   if (myVideo.muted) {
+//     myVideo.muted = false;
+//     muteUnmuteImg.src =
+//       "https://img.icons8.com/ios-glyphs/30/high-volume--v2.png";
+//   } else {
+//     myVideo.muted = true;
+//     muteUnmuteImg.src = "https://img.icons8.com/ios-glyphs/30/no-audio--v1.png";
+//   }
+// }
 
-heartButton.addEventListener("click", updateLikes);
+// const stardustButton = document.querySelector("#stardust-vid-button");
+// console.log(stardustButton);
 
-const likesContainer = document.querySelector("#likes");
-let likes = 0;
+// stardustButton.addEventListener("click", function chooseVideo() {
+//   playVideo(0);
+// });
 
-function updateLikes() {
-  likes++;
-  likesContainer.textContent = likes;
-}
+// const zenscapeButton = document.querySelector("#zenscape-vid-button");
+// console.log(zenscapeButton);
 
-const step1Button = document.querySelector("#step1-button");
-console.log(step1Button);
+// zenscapeButton.addEventListener("click", function chooseVideo() {
+//   playVideo(1);
+// });
 
-step1Button.addEventListener("click", gotoStep1);
+// const musicVideoButton = document.querySelector("#musicvideo-vid-button");
+// console.log(musicVideoButton);
 
-function gotoStep1() {
-  myVideo.currentTime = 16.0;
-}
+// musicVideoButton.addEventListener("click", function chooseVideo() {
+//   playVideo(2);
+// });
 
-const step2Button = document.querySelector("#step2-button");
-console.log(step2Button);
+// function playVideo(no) {
+//   myVideo.src = videoList[no].src;
+//   console.log(myVideo.src);
+//   myVideo.load();
+//   myVideo.play();
+// }
 
-step2Button.addEventListener("click", gotoStep2);
+// const fullscreenButton = document.querySelector("#fullscreen-button");
+// console.log(fullscreenButton);
 
-function gotoStep2() {
-  myVideo.currentTime = 43.0;
-}
+// fullscreenButton.addEventListener("click", toggleFullscreen);
 
-const fastForwardButton = document.querySelector("#fast-forward-button");
-console.log(fastForwardButton);
+// function toggleFullscreen() {
+//   if (!document.fullscreenElement) {
+//     myVideo.requestFullscreen();
+//   } else {
+//     document.exitFullscreen();
+//   }
+// }
 
-fastForwardButton.addEventListener("click", fastForward);
+// const heartButton = document.querySelector("#heart-button");
+// console.log(heartButton);
 
-function fastForward() {
-  if (myVideo.playbackRate === 1.0) {
-    myVideo.playbackRate = 2.0;
-  } else {
-    myVideo.playbackRate = 1.0;
-  }
-}
+// heartButton.addEventListener("click", updateLikes);
+
+// const likesContainer = document.querySelector("#likes");
+// let likes = 0;
+
+// function updateLikes() {
+//   likes++;
+//   likesContainer.textContent = likes;
+// }
+
+// const step1Button = document.querySelector("#step1-button");
+// console.log(step1Button);
+
+// step1Button.addEventListener("click", gotoStep1);
+
+// function gotoStep1() {
+//   myVideo.currentTime = 16.0;
+// }
+
+// const step2Button = document.querySelector("#step2-button");
+// console.log(step2Button);
+
+// step2Button.addEventListener("click", gotoStep2);
+
+// function gotoStep2() {
+//   myVideo.currentTime = 43.0;
+// }
+
+// const fastForwardButton = document.querySelector("#fast-forward-button");
+// console.log(fastForwardButton);
+
+// fastForwardButton.addEventListener("click", fastForward);
+
+// function fastForward() {
+//   if (myVideo.playbackRate === 1.0) {
+//     myVideo.playbackRate = 2.0;
+//   } else {
+//     myVideo.playbackRate = 1.0;
+//   }
+// }
