@@ -1,13 +1,13 @@
 // ELEMENT REFERENCES -- instantiating a bunch of reference points for js to draw from the DOM (various html elements within the system hierarchy), trying to maintain the same labellings but with camel casing
 
 const currentlyPlaying =
-  document.querySelector("currently-playing");
+  document.querySelector("#currently-playing");
 
 const progressBar =
   document.querySelector("#progress-bar");
 
 const progressBarContainer =
-  document.querySelector("progress-bar-container");
+  document.querySelector("#progress-bar-container");
 
 // as in, play OR pause button
 const playPauseButton =
@@ -24,7 +24,7 @@ const duration =
   document.querySelector("#duration");
 
 const quoteText =
-  document.querySelctor("#quote-text");
+  document.querySelector("#quote-text");
 
 const previousButton =
   document.querySelector("#previous-button");
@@ -45,22 +45,22 @@ function togglePlayback() {
   // in the scenario where the audio has been paused, it will:
   if (currentlyPlaying.paused) {
     
-    // set the button into 'play' state, as in, ready to be played
+
+    // keep the button in the 'pause' state, as in, ready to be paused
     currentlyPlaying.play();
-    // display the play icon
-    playPauseImg.src = "images/Play.png";
-    playPauseImg.alt = "images/Play Icon";
+    // display the pause icon
+    playPauseImg.src = "images/Pause.png";
+    playPauseImg.alt = "images/Pause Icon";
   
     // if the audio is still playing
   } else {
    
-    // keep the button in the 'pause' state, as in, ready to be paused
+    // set the button into 'play' state, as in, ready to be played
     currentlyPlaying.pause();
-    // display the pause icon
-    playPauseImg.src = "images/Pause.png";
-    playPauseImg.alt = "Pause Icon";
+    // display the play icon
+    playPauseImg.src = "images/Play.png";
+    playPauseImg.alt = "Play Icon";
   }
-
 };
 
 // RESET ICON -- for when the song ends naturally, turn into 'play' state
@@ -108,7 +108,7 @@ function updateProgress() {
   // keeping consts within their functions
   const progress =
   // the current time of the song, divided by the total duration, then multiplied by 100.
-    (currentlyPlaying.currentTime / duration) * 100;
+    (currentlyPlaying.currentTime / currentlyPlaying.duration) * 100;
 
   // the .style.width overrides any styling directions from the CSS that may have been previously stated, and instead changes the html element directly, super neat.
   // the amount of width is determined by simply adding a percentage sign to the end of the progress float
@@ -146,7 +146,7 @@ function seekAudio(event) {
 
   // change the current time of the song to the place of the mouse click, divided by the total width of the progress bar, multiplied by the duration of the song.
   currentlyPlaying.currentTime =
-    (clickX / width) * duration;
+    (clickX / width) * currentlyPlaying.duration;
 }
 
 // QUOTE SYSTEM -- code to occasionally cycle between motivational quotes
@@ -188,7 +188,7 @@ previousButton.addEventListener(
 nextButton.addEventListener(
   "click",
   function () {
-    currentlyPlaying.currentTime -= 10;
+    currentlyPlaying.currentTime += 10;
   }
 );
 
