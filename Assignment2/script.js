@@ -114,16 +114,64 @@ function updateProgress() {
   // the amount of width is determined by simply adding a percentage sign to the end of the progress float
   progressBar.style.width = progress + "%";
 
-  // 
+  // currentTime = targeting the current-time element
+  // textContent = targeting the visible text
+  // formatTime = calls on the previous function to output the beautifully formatted time value
+  // currentlyPlaying.currentTime = take the song thats currently playing and read its raw time value in this very moment to then feed into the formatTime function.
   currentTime.textContent =
     formatTime(currentlyPlaying.currentTime);
 
+  // same thing but for the duration, this one stays a static element obv
   duration.textContent =
     formatTime(currentlyPlaying.duration);
-
 }
 
+// SEEK THROUGH TRACK -- code to let the user click on the progress bar and jump to different parts of the song
 
+// when a click is detected on the progress bar, run the seekAudio function below
+progressBarContainer.addEventListener(
+  "click",
+  seekAudio
+);
+
+// the function only runs if it recieves the uhh i dont really understand this parameter so change this comment later if u get time
+function seekAudio(event) {
+  // const to pull the width data of the progress bar, clientWidth gives the visible width in pixels that the element shows in the vp
+  const width =
+  progressBarContainer.clientWidth;
+
+  // const to pull the horizontal click position data, how much to the left or right the user clicks on the progress bar
+  const clickX =
+  event.offsetX;
+
+  // change the current time of the song to the place of the mouse click, divided by the total width of the progress bar, multiplied by the duration of the song.
+  currentlyPlaying.currentTime =
+    (clickX / width) * duration;
+}
+
+// QUOTE SYSTEM -- code to occasionally cycle between motivational quotes
+
+// not putting this const at the top since its not a query selector, more just a storer of strings for this specific function which isnt recalled upon at any other parts of the code
+// using square brackets here instead of curlys since its an array
+const quotes = [
+  "It'll get done. Don't worry.",
+  "Patient focus. If you can't concentrate, just take a second. But always come back.",
+  "do u feel the study vibes",
+  "i think you'd want urself to lock in",
+  "All this is an investment into yourself."
+];
+
+// creating a function to rotate between quotes randomly every 45 seconds
+function rotateQuote() {
+
+  const randomQuote =
+// 
+    quotes[Math.floor(Math.random() * quotes.length)];
+
+  quoteText.textContent = randomQuote;
+}
+
+setInterval(rotateQuote, 450000);
 
 
 
