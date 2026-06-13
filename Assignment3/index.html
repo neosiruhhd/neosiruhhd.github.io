@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neo - A3</title>
+    <script src="script.js" defer></script> <!-- the defer attribute makes sure while the browser is downloading the js that it doesnt prevent the html in main from being loaded-->
 </head>
 <body>
-    
+    <main class="stage">
+        <section class="shelf" id="shelf">
+            <!-- it looks like theres nothing here but my js will insert all the product cards here, section element is just used for css and js to agree on the same location to apply function and styles -->
+        </section>
+
+        <section class="cart" id="cart">
+            <p class="cart__hint"> Drag and drop products in<br>this area to add to cart</p> <!-- this is the label that is in the center of the target area for the drag and drop, otherwise its the same as the above -->
+        </section>
+
+        <div class="checkout"> <!-- this is the container for the subtotal numbers and the fun confirmation slider -->
+            <!-- okay this is a bit confusing but i suppose it makes sense: class="subtotal" and id="subtotal" carry the same name, but it works since the class is for the CSS styling and id is for js, so they dont end up conflicting with each other. 
+             
+            the span class and id's however are different because of the difference between camelcasing (which is standardised for js) and BEM element notation (which is standardised for CSS). on top of that, with BEM, you always need to have two underscores __ to denote a clear separation from the block to the element, really confusing
+            
+            and the 'Subtotal:' and '$0.00' aren't in <p> blocks as its fine to reference them as non elements since the '$0.00' is inline with the span and the div is the container for the 'Subtotal:' to sit as a text node. wth -->
+            <div class="subtotal" id="subtotal">
+                <!-- the js will calculate the rising and falling costs of the cart, then insert the mathematical output here -->
+                Subtotal: <span class="subtotal__value" id="subtotalValue">$0.00</span>"
+            </div>
+
+            <div class="slider is-disabled" id="slider" role="button"> <!-- the class name 'slider is-disabled' is named this way to semantically indicate to developers that this is a temporary state, and that it will toggle between being attributed and unattributed to this div element -->
+                <span class="slider-label" id="sliderLabel">Confirm Purchase</span>
+                <span class="slider__target"></span> <!-- this is the location of the dashed square on the right -->
+                <span class="slider__knob" id="knob"></span> <!-- the location of the draggable square, this span has an id attached to it as well since its calling from js for the icon-->
+            </div>
+        </div>
+    </main>
 </body>
 </html>
