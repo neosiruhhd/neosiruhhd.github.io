@@ -28,7 +28,7 @@ const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 
 // once again in html syntax as once this function activated by js code later on, it generates the visual element of the shoe image in its requested location. will output a different shoe depending on its attached ID
 function makeSneaker(id) {
-    return `<img class="shoe" src="shoes/shoe-${id}.jpg" alt="Shoe ${id}" draggable="false">`;
+    return `<img class="shoe" src="Shoes/shoe-${id}.jpg" alt="Shoe ${id}" draggable="false">`;
 }
 
 // in a numerical array, attaches IDs from 0-10 for the 11 shoes being sold on the website 
