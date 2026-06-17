@@ -328,7 +328,7 @@ body {
   clip-path: none;
 }
 
-.hot { color: #5538f5; }
+.hot { color: #e23b3b; }
 
 .slider__target {
   position: absolute;
@@ -372,9 +372,7 @@ body {
   background: linear-gradient(90deg, #1fc77f, var(--success));
 }
 
-/* =================================================================== */
-/*  RESPONSIVE: stack vertically on narrow screens                     */
-/* =================================================================== */
+/* all code below is to help responsiveness on narrower screens, dont think this was necessary though */
 @media (max-width: 820px) {
   .stage {
     grid-template-columns: 1fr;

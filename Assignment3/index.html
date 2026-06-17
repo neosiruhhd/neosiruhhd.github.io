@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neo - A3</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script> <!-- the defer attribute makes sure while the browser is downloading the js that it doesnt prevent the html in main from being loaded-->
 </head>
 <body>
@@ -24,11 +25,11 @@
             and the 'Subtotal:' and '$0.00' aren't in <p> blocks as its fine to reference them as non elements since the '$0.00' is inline with the span and the div is the container for the 'Subtotal:' to sit as a text node. wth -->
             <div class="subtotal" id="subtotal">
                 <!-- the js will calculate the rising and falling costs of the cart, then insert the mathematical output here -->
-                Subtotal: <span class="subtotal__value" id="subtotalValue">$0.00</span>"
+                Subtotal: <span class="subtotal__value" id="subtotalValue">$0.00</span>
             </div>
 
             <div class="slider is-disabled" id="slider" role="button"> <!-- the class name 'slider is-disabled' is named this way to semantically indicate to developers that this is a temporary state, and that it will toggle between being attributed and unattributed to this div element -->
-                <span class="slider-label" id="sliderLabel">Confirm Purchase</span>
+                <span class="slider__label" id="sliderLabel">Confirm Purchase</span>
                 <span class="slider__target"></span> <!-- this is the location of the dashed square on the right -->
                 <span class="slider__knob" id="knob"></span> <!-- the location of the draggable square, this span has an id attached to it as well since its calling from js for the icon-->
             </div>

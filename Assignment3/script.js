@@ -1,7 +1,7 @@
 // === CONSTANTS ===
 
 // instantiating the uniform price of each of the shoes
-const Price = 80;
+const PRICE = 80;
 
 // the vertical distance in pixels the slider knob moves
 const NOD_TRAVEL = 30;
